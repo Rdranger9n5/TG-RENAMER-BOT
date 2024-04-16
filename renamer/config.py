@@ -7,7 +7,7 @@ class Config:
     API_ID = int(os.environ.get("API_ID", 3566507))
     API_HASH = os.environ.get("API_HASH", "194e4ba8b6787e11274f47ae63eb56ba")
     OWNER_ID =  int(os.environ.get("OWNER_ID", "1654009706"))
-    AUTH_USERS = list(int(i) for i in os.environ.get("AUTH_USERS", "").split(" ")) if os.environ.get("AUTH_USERS", "1654009706") else []
+    AUTH_USERS = list(int(i) for i in os.environ.get("AUTH_USERS", "").split(" ")) if os.environ.get("AUTH_USERS", "") else []
     if OWNER_ID not in AUTH_USERS:
         AUTH_USERS.append(OWNER_ID)
     BANNED_USERS = [int(i) for i in os.environ.get("BANNED_USERS", "").split(" ")] if os.environ.get("BANNED_USERS", "") else None
